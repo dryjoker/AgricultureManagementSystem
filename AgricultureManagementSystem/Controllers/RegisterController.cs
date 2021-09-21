@@ -26,13 +26,13 @@ namespace AgricultureManagementSystem.Controllers
             }
         }
 
-        // GET: Register
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Add()
         {
             return View();
         }
+
 
         [HttpPost]
         [AllowAnonymous]
@@ -55,12 +55,14 @@ namespace AgricultureManagementSystem.Controllers
                 }
                 AddErrors(result);
             }
+
+            //return RedirectToAction("Index", "Register", addUserViewModel);
             return View(addUserViewModel);
         }
 
         private void AddErrors(IdentityResult identityResult)
         {
-            foreach(var error in identityResult.Errors)
+            foreach (var error in identityResult.Errors)
             {
                 ModelState.AddModelError("", error);
             }

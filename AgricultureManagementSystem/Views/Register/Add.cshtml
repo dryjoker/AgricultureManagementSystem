@@ -42,40 +42,43 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            @using (Html.BeginForm("Add", "Register", FormMethod.Post, new { @class = "user", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <hr />
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="regName"
-                                           placeholder="請輸入帳號">
+                                    @Html.TextBoxFor(m => m.Account, new { @class = "form-control form-control-user", placeholder = "請輸入帳號" })
                                 </div>
 
                                 <div class="form-group">
-                                    <select id="regRegion" class="form-control" style="font-size: 0.8rem; border-radius: 10rem; ">
-                                        <option value="" selected>請選擇一個外場地名</option>
-                                        <option value="萬合">萬合</option>
-                                        <option value="二林">二林</option>
-                                        <option value="山寮">山寮</option>
-                                        <option value="丈八斗">丈八斗</option>
-                                        <option value="梨頭厝">梨頭厝</option>
-                                    </select>
+                                    @{
+                                        List<SelectListItem> items = new List<SelectListItem>();
+                                        items.Add(new SelectListItem() { Text = "請選擇一個外場地名", Value = "", Selected = true });
+                                        items.Add(new SelectListItem() { Text = "萬合", Value = "萬合", Selected = false });
+                                        items.Add(new SelectListItem() { Text = "二林", Value = "二林", Selected = false });
+                                        items.Add(new SelectListItem() { Text = "山寮", Value = "山寮", Selected = false });
+                                        items.Add(new SelectListItem() { Text = "丈八斗", Value = "丈八斗", Selected = false });
+                                        items.Add(new SelectListItem() { Text = "梨頭厝", Value = "梨頭厝", Selected = false });
+                                    }
+                                    @Html.DropDownListFor(m => m.Region, items, new { @class = "form-control", style = "font-size: 0.8rem; border-radius: 10rem;" })
+                                    @*@Html.DropDownList("Region", items, new { @class= "form-control",style= "font-size: 0.8rem; border-radius: 10rem;" })*@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="regEmail"
-                                           placeholder="請輸入Email">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-user", @type = "email", placeholder = "請輸入Email" })
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleInputPassword" placeholder="請輸入密碼">
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control form-control-user", @type = "password", placeholder = "請輸入密碼" })
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleRepeatPassword" placeholder="請再次輸入密碼">
+                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control form-control-user", @type = "password", placeholder = "請再次輸入密碼" })
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" />
                                 <hr>
-                            </form>
-                            <hr>
+                            }
+
                             <div class="text-center">
                                 <a class="small" href="/Password/Index">Forgot Password?</a>
                             </div>

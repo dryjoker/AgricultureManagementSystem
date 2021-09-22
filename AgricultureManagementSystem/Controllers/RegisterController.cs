@@ -44,6 +44,7 @@ namespace AgricultureManagementSystem.Controllers
                 var user = new User
                 {
                     UserName = addUserViewModel.Account,
+                    Account = addUserViewModel.Account,
                     Email = addUserViewModel.Email,
                     Region = addUserViewModel.Region
                 };

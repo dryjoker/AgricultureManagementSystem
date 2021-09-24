@@ -48,10 +48,13 @@ namespace AgricultureManagementSystem.Controllers
                     Email = addUserViewModel.Email,
                     Region = addUserViewModel.Region
                 };
-                
+
                 var result = await UserManager.CreateAsync(user, addUserViewModel.Password);
                 if (result.Succeeded)
                 {
+                    string verify_code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var verify_EmailUrl = Url.Action("ConfirmEmail", "Register", new { userId = user.Id, code = verify_code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "新註冊用戶信箱開通", "請點擊如下連結 < a href =\"" + verify_EmailUrl + "\">Here</a>來確認你的帳戶");
                     return RedirectToAction("Index", "Login");
                 }
                 AddErrors(result);

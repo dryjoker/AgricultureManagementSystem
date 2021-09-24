@@ -25,7 +25,7 @@ namespace AgricultureManagementSystem
         public override async Task<IdentityResult> ValidateAsync(User user)
         {
             IdentityResult result = await base.ValidateAsync(user);
-            int cntAccount =_userManager.Users.Select(u => u.Account == user.Account).Count();
+            int cntAccount = _userManager.Users.Where(n => n.Account == user.Account).Count();
             if (cntAccount > 0)
             {
                 var errors = result.Errors.ToList();

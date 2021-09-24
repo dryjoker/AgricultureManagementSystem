@@ -48,7 +48,7 @@ namespace AgricultureManagementSystem.Controllers
                     Email = addUserViewModel.Email,
                     Region = addUserViewModel.Region
                 };
-
+                
                 var result = await UserManager.CreateAsync(user, addUserViewModel.Password);
                 if (result.Succeeded)
                 {

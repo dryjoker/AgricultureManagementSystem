@@ -20,6 +20,18 @@ namespace AgricultureManagementSystem
         public static UserManager Create(IdentityFactoryOptions<UserManager> options, IOwinContext context)
         {
             var manager = new UserManager(new UserStore<User>(context.Get<Models.IdentityDbContext>()));
+            //manager.UserValidator = new UserValidator<User>(manager)
+            //{
+            //    AllowOnlyAlphanumericUserNames = false,
+            //    RequireUniqueEmail = true
+            //};
+
+            manager.UserValidator = new CustomUserValidator(manager)
+            {
+                AllowOnlyAlphanumericUserNames = false,
+                RequireUniqueEmail = true
+            };
+
             return manager;
         }
     }

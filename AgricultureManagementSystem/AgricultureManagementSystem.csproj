@@ -131,6 +131,8 @@
     <Content Include="img\agriculture_not-resized.jpg" />
     <Content Include="img\farm.jpg" />
     <Content Include="img\free-rice-field-illustration-vector.jpg" />
+    <Content Include="img\land_data_sample.png" />
+    <Content Include="img\land_data_sample2.png" />
     <Content Include="img\RiceField1.svg" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="img\undraw_profile.svg" />
@@ -170,6 +172,7 @@
     <Content Include="vendor\datatables\dataTables.bootstrap4.min.js" />
     <Content Include="vendor\datatables\jquery.dataTables.js" />
     <Content Include="vendor\datatables\jquery.dataTables.min.js" />
+    <Content Include="vendor\elevatezoom\jquery.elevateZoom-3.0.8.min.js" />
     <Content Include="vendor\fontawesome-free\attribution.js" />
     <Content Include="vendor\fontawesome-free\css\all.css" />
     <Content Include="vendor\fontawesome-free\css\all.min.css" />
@@ -1831,10 +1834,16 @@
     <Compile Include="App_Start\CustomUserValidator.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContractLandController.cs" />
+    <Compile Include="Controllers\ConvertRateController.cs" />
+    <Compile Include="Controllers\FarmerDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LandDataController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RicePriceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2027,6 +2036,17 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Password\Index.cshtml" />
     <Content Include="Views\Register\Add.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\FarmerData\CreateData.cshtml" />
+    <Content Include="Views\FarmerData\QueryEditData.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\FarmerData\Edit.cshtml" />
+    <Content Include="Views\LandData\ImportData.cshtml" />
+    <Content Include="Views\ContractLand\QueryContratLandData.cshtml" />
+    <Content Include="Views\ContractLand\Edit.cshtml" />
+    <Content Include="Views\RicePrice\QueryRicePriceData.cshtml" />
+    <Content Include="Views\RicePrice\Edit.cshtml" />
+    <Content Include="Views\ConvertRate\QueryConvertRate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

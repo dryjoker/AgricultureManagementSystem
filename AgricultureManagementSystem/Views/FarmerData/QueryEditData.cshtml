@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "農民基本資料查詢編輯";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">農民基本資料查詢</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>農民編號</th>
+                        <th>農民姓名</th>
+                        <th>身分證字號</th>
+                        <th>電話</th>
+                        <th>手機</th>
+                        <th>地址</th>
+                        <th>生日</th>
+                        <th>備註</th>
+                        <th>契作戶Y/N</th>
+                        <th>外場地點</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A0001</td>
+                        <td>Mike</td>
+                        <td>M123456789</td>
+                        <td>0312345678</td>
+                        <td>0912345678</td>
+                        <td>523 彰化縣埤頭鄉中學路2號</td>
+                        <td>1989-05-24</td>
+                        <td></td>
+                        <td>Y</td>
+                        <td>埤頭</td>
+                        <td>
+                            @Html.ActionLink("編輯", "Edit")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A0002</td>
+                        <td>Jack</td>
+                        <td>S123456789</td>
+                        <td></td>
+                        <td>0912345678</td>
+                        <td>505 彰化縣鹿港鎮富麗一街21號</td>
+                        <td>1989-05-24</td>
+                        <td>test test</td>
+                        <td>Y</td>
+                        <td>鹿港</td>
+                        <td>
+                            @Html.ActionLink("編輯", "Edit")
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

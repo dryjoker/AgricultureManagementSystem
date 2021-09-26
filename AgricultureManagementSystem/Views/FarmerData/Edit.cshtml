@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                農民基本資料編輯
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>農民編號(公糧檔號)</label>
+                                <input class="form-control" placeholder="Enter farmer id">
+                            </div>
+                            <div class="form-group">
+                                <label>農民姓名</label>
+                                <input class="form-control" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label>電話</label>
+                                <input class="form-control" placeholder="Enter phone">
+                            </div>
+                            <div class="form-group">
+                                <label>手機</label>
+                                <input class="form-control" placeholder="Enter cellphone">
+                            </div>
+                            <div class="form-group">
+                                <label>地址</label>
+                                <input class="form-control" placeholder="Enter address">
+                            </div>
+                            <div class="form-group">
+                                <label>生日</label>
+                                <input class="form-control" placeholder="Enter birthdate">
+                            </div>
+
+                            <div class="form-group">
+                                <label>備註</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>契作戶Y/N</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="Y" checked>Y
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="N">N
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-facebook">提交</button>
+                        </form>
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->

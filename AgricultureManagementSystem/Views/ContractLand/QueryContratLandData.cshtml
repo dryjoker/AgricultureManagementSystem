@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "QueryContratLandData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">契作農地資料查詢編輯</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>縣市</th>
+                        <th>鄉鎮</th>
+                        <th>地段</th>
+                        <th>地號</th>
+                        <th>國土面積</th>
+                        <th>權利面積</th>
+                        <th>契作面積</th>
+                        <th>所有權人姓名</th>
+                        <th>所有權人身分證字號</th>
+                        <th>代耕人</th>
+                        <th>土地備註</th>
+                        <th>專區Y/N</th>
+                        <th>履歷Y/N</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>縣市</td>
+                        <td>鄉鎮</td>
+                        <td>地段</td>
+                        <td>地號</td>
+                        <td>國土面積</td>
+                        <td>權利面積</td>
+                        <td>契作面積</td>
+                        <td>所有權人姓名</td>
+                        <td>所有權人身分證字號</td>
+                        <td>代耕人</td>
+                        <td>土地備註</td>
+                        <td>專區Y/N</td>
+                        <td>履歷Y/N</td>
+                        <td>@Html.ActionLink("編輯", "Edit")</td>
+                    </tr>
+                    <tr>
+                        <td>縣市</td>
+                        <td>鄉鎮</td>
+                        <td>地段</td>
+                        <td>地號</td>
+                        <td>國土面積</td>
+                        <td>權利面積</td>
+                        <td>契作面積</td>
+                        <td>所有權人姓名</td>
+                        <td>所有權人身分證字號</td>
+                        <td>代耕人</td>
+                        <td>土地備註</td>
+                        <td>專區Y/N</td>
+                        <td>履歷Y/N</td>
+                        <td>@Html.ActionLink("編輯", "Edit")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

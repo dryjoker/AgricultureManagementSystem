@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "系統使用者查詢編輯";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>系統使用者查詢編輯</h2>*@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">使用者帳戶</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>帳號</th>
+                        <th>信箱</th>
+                        <th>外場</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jason</td>
+                        <td>jason486@gmail.com</td>
+                        <td>萬和</td>
+                        <td>
+                            @Html.ActionLink("編輯", "Edit")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jenny</td>
+                        <td>jenny5566@gmail.com</td>
+                        <td>二林</td>
+                        <td>
+                            @Html.ActionLink("編輯", "Edit")
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

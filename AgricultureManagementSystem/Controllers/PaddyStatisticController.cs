@@ -6,18 +6,15 @@ using System.Web.Mvc;
 
 namespace AgricultureManagementSystem.Controllers
 {
-    public class ConvertRateController : Controller
+    public class PaddyStatisticController : Controller
     {
-        // GET: ConvertRate
-        public ActionResult QueryConvertRate()
+        // GET: PaddyStatistic
+        public ActionResult QueryPaddyStatistic()
         {
             return View();
         }
 
-        public ActionResult Edit()
-        {
-            return View();
-        }
+
 
     }
 }

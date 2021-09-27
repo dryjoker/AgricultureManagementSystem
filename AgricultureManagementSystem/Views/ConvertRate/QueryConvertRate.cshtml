@@ -5,40 +5,89 @@
 }
 
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">濕乾穀折算率</h6>
+    <div class="card-header py-3">        
+        <h6 class="m-0 font-weight-bold text-primary">濕乾穀折算率資料單筆建檔</h6>
     </div>
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th >濕稻穀含水率(%)</th>
-                        <th >濕乾穀折算率(%)</th>
-                        <th >烘乾及其他費用(元/公斤/濕稻穀)</th>
-                        <th colspan="3" rowspan="2">每百台斤濕稻穀收益(元)(含縣府運費)</th>
-                    </tr>
-                    <tr>
-                        <th> </th>
-                        <th> </th>
-                        <th>合計</th>
-                        <th>計畫收購</th>
-                        <th>輔導收購</th>
-                        <th>餘糧收購</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>24</td>
-                        <td>83</td>
-                        <td>1.7</td>
-                        <td>計畫收購</td>
-                        <td>輔導收購</td>
-                        <td>餘糧收購</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-lg-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label>濕稻穀含水率(%)</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>濕乾穀折算率(%)</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>烘乾及其他費用(元/公斤/濕稻穀)</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>計畫收購</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>輔導收購</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>餘糧收購</label>
+                        <input class="form-control" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-facebook">新增</button>
+                </form>
+            </div>
+            <!-- /.col-lg-6 (nested) -->
         </div>
+        <!-- /.row (nested) -->
     </div>
 </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">濕乾穀折算率</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>濕稻穀含水率(%)</th>
+                            <th>濕乾穀折算率(%)</th>
+                            <th>烘乾及其他費用(元/公斤/濕稻穀)</th>
+                            <th>計畫收購</th>
+                            <th>輔導收購</th>
+                            <th>餘糧收購</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>24</td>
+                            <td>83</td>
+                            <td>1.7</td>
+                            <td>1017</td>
+                            <td>1020</td>
+                            <td>1054</td>
+                            <td>
+                                @Html.ActionLink("編輯", "Edit")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>84</td>
+                            <td>1.7</td>
+                            <td>1017</td>
+                            <td>1020</td>
+                            <td>1054</td>
+                            <td>
+                                @Html.ActionLink("編輯", "Edit")
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

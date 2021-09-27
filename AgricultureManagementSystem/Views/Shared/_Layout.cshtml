@@ -16,6 +16,9 @@
 
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body id="page-top">
 
@@ -99,22 +102,22 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/GranaryInput/AddGranaryInputData">
                     <i class="fas fa-fw fa-file"></i>
                     <span>入穀資料建檔</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/GranaryInput/QueryGranaryInputData">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>入料清冊查詢</span>
+                    <span>入料清冊查詢及編輯</span>
                 </a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/PaddyStatistic/QueryPaddyStatistic">
                     <i class="fas fa-fw fa-table"></i>
                     <span>稻穀進出統計表</span>
                 </a>
@@ -122,7 +125,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/PaddySell/QueryPaddySellData">
                     <i class="fas fa-fw fa-table"></i>
                     <span>稻穀銷售資料</span>
                 </a>
@@ -250,6 +253,9 @@
     <script src="~/js/demo/chart-area-demo.js"></script>
     <script src="~/js/demo/chart-pie-demo.js"></script>
     <script src="~/vendor/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
-    @RenderSection("scripts", required: false)
+
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    @RenderSection("scripts", required: false);
 </body>
 </html>

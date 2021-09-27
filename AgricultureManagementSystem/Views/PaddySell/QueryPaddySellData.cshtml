@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "QueryPaddySellData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">稻穀銷售資料</h6>
+        <button type="button" class="btn btn-success">匯出</button>
+        <button type="button" class="btn btn-facebook">列印</button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>銷售點</th>
+                        <th>客戶名稱</th>
+                        <th>品項</th>
+                        <th>數量</th>
+                        <th>單價</th>
+                        <th>總金額</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>銷售點</td>
+                        <td>客戶名稱</td>
+                        <td>品項</td>
+                        <td>數量</td>
+                        <td>單價</td>
+                        <td>總金額</td>
+                    </tr>
+                    <tr>
+                        <td>銷售點</td>
+                        <td>客戶名稱</td>
+                        <td>品項</td>
+                        <td>數量</td>
+                        <td>單價</td>
+                        <td>總金額</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+}

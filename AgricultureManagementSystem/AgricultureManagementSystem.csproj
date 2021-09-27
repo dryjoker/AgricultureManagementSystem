@@ -1838,9 +1838,12 @@
     <Compile Include="Controllers\ContractLandController.cs" />
     <Compile Include="Controllers\ConvertRateController.cs" />
     <Compile Include="Controllers\FarmerDataController.cs" />
+    <Compile Include="Controllers\GranaryInputController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandDataController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaddySellController.cs" />
+    <Compile Include="Controllers\PaddyStatisticController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RicePriceController.cs" />
@@ -2047,6 +2050,12 @@
     <Content Include="Views\RicePrice\QueryRicePriceData.cshtml" />
     <Content Include="Views\RicePrice\Edit.cshtml" />
     <Content Include="Views\ConvertRate\QueryConvertRate.cshtml" />
+    <Content Include="Views\GranaryInput\QueryGranaryInputData.cshtml" />
+    <Content Include="Views\ConvertRate\Edit.cshtml" />
+    <Content Include="Views\GranaryInput\AddGranaryInputData.cshtml" />
+    <Content Include="Views\GranaryInput\Edit.cshtml" />
+    <Content Include="Views\PaddyStatistic\QueryPaddyStatistic.cshtml" />
+    <Content Include="Views\PaddySell\QueryPaddySellData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

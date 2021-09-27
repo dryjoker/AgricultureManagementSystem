@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
-    <Height>2in</Height>
+    <Height>4.72917in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>8.19792in</Width>
   <Page>
     <PageHeight>21cm</PageHeight>
     <PageWidth>14.8cm</PageWidth>

@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "QueryPaddyStatistic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">稻穀進出統計表</h6>
+        <button type="button" class="btn btn-success">匯出</button>
+        <button type="button" class="btn btn-facebook">列印</button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>外場地點</th>
+                        <th>磅單No.</th>
+                        <th>摘要</th>
+                        <th>品項</th>
+                        <th>單價</th>
+                        <th>購入數量</th>
+                        <th>購入總金額</th>
+                        <th>轉出數量</th>
+                        <th>轉出總金額</th>
+                        <th>結存</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>日期</td>
+                        <td>外場地點</td>
+                        <td>磅單No.</td>
+                        <td>摘要</td>
+                        <td>品項</td>
+                        <td>單價</td>
+                        <td>購入數量</td>
+                        <td>購入總金額</td>
+                        <td>轉出數量</td>
+                        <td>轉出總金額</td>
+                        <td>結存</td>
+                    </tr>
+                    <tr>
+                        <td>日期</td>
+                        <td>外場地點</td>
+                        <td>磅單No.</td>
+                        <td>摘要</td>
+                        <td>品項</td>
+                        <td>單價</td>
+                        <td>購入數量</td>
+                        <td>購入總金額</td>
+                        <td>轉出數量</td>
+                        <td>轉出總金額</td>
+                        <td>結存</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{    
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+}

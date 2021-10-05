@@ -5,54 +5,6 @@
 }
 
 <div class="row">
-    <!--<div class="col-lg-12">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                土地地段資料維護(批次匯入)
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <form role="form">
-                            <div class="form-group">
-                                <label>請匯入【地籍圖資-公有土地資料XML檔案】</label>
-                                <a href="https://publands.land.moi.gov.tw/Index">資料網址</a>
-
-                                <input type="file">
-                            </div>
-                            <button type="submit" class="btn btn-facebook">確認匯入</button>
-                        </form>
-                    </div>-->
-                    <!-- /.col-lg-6 (nested) -->
-                <!--</div>-->
-                <!-- /.row (nested) -->
-            <!--</div>
-        </div>-->
-        <!-- /.panel -->
-    <!--</div>-->
-    <!-- /.col-lg-12 -->
-    <!--<div class="col-lg-12">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                xml資料格式sample
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img id="zoom_01" src="~/img/land_data_sample.png" class="img-fluid" />
-                    </div>
-                    <div class="col-lg-6">
-                        <img id="zoom_02" src="~/img/land_data_sample2.png" class="img-fluid" />
-                    </div>-->
-                    <!-- /.col-lg-6 (nested) -->
-                <!--</div>-->
-                <!-- /.row (nested) -->
-            <!--</div>
-        </div>-->
-        <!-- /.panel -->
-    <!--</div>-->
-    <!-- /.col-lg-12 -->
-
     <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -68,95 +20,16 @@
                                     <input type="text" class="form-control" id="inputFirstname">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="inputLastname">段小段</label>
+                                    <label for="inputLastname">鄉鎮</label>
                                     <input type="text" class="form-control" id="inputLastname">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <label for="inputFirstname">地號</label>
-                                    <input type="text" class="form-control" id="inputFirstname">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="inputLastname">登記面積</label>
-                                    <input type="text" class="form-control" id="inputLastname">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <label for="inputFirstname">所有權人姓名</label>
-                                    <input type="text" class="form-control" id="inputFirstname">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="inputLastname">所有權人身分證字號</label>
-                                    <input type="text" class="form-control" id="inputLastname">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <label for="inputFirstname">統一編號</label>
+                                <div class="col-12">
+                                    <label for="inputFirstname">地段</label>
                                     <input type="text" class="form-control" id="inputFirstname">
                                 </div>                                
-                            </div>
-
-                            @*<div class="form-group row">
-            <div class="col-sm-6">
-                <label for="inputFirstname">代耕人</label>
-                <input type="text" class="form-control" id="inputFirstname">
-            </div>
-            <div class="col-sm-6">
-                <label for="inputLastname">土地備註</label>
-                <input type="text" class="form-control" id="inputLastname">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-6">
-                <label for="inputFirstname">專區Y/N</label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios1" id="optionsRadios1_1" value="Y" checked>Y
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios1" id="optionsRadios1_2" value="N">N
-                    </label>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <label for="inputLastname">履歷Y/N</label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios2" id="optionsRadios2_1" value="Y" checked>Y
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios2" id="optionsRadios2_2" value="N">N
-                    </label>
-                </div>
-            </div>
-        </div>*@
-                            @*<div class="form-group row">
-            <div class="col-sm-6">
-                <label for="inputFirstname">使用分區</label>
-                <input type="text" class="form-control" id="inputFirstname">
-            </div>
-            <div class="col-sm-6">
-                <label for="inputLastname">使用地類別</label>
-                <input type="text" class="form-control" id="inputLastname">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-6">
-                <label for="inputFirstname">公告現值</label>
-                <input type="text" class="form-control" id="inputFirstname">
-            </div>
-            <div class="col-sm-6">
-                <label for="inputLastname">公告地價</label>
-                <input type="text" class="form-control" id="inputLastname">
-            </div>
-        </div>*@
+                            </div>                                  
                             <button type="submit" class="btn btn-facebook">確認匯入</button>
                         </form>
                     </div>
@@ -175,15 +48,15 @@
 @section scripts
 {
     @*<script type="text/javascript">
-        $(document).ready(function () {
             $(document).ready(function () {
-                $("#img_01").elevateZoom({
-                    zoomType: "inner",
-                    cursor: "crosshair",
-                    zoomWindowFadeIn: 500,
-                    zoomWindowFadeOut: 750
+                $(document).ready(function () {
+                    $("#img_01").elevateZoom({
+                        zoomType: "inner",
+                        cursor: "crosshair",
+                        zoomWindowFadeIn: 500,
+                        zoomWindowFadeOut: 750
+                    });
                 });
-            });
-    </script>*@
+        </script>*@
 
 }

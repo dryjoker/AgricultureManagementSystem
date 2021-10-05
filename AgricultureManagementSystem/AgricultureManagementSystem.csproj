@@ -2057,6 +2057,7 @@
     <Content Include="Views\GranaryInput\Edit.cshtml" />
     <Content Include="Views\PaddyStatistic\QueryPaddyStatistic.cshtml" />
     <Content Include="Views\PaddySell\QueryPaddySellData.cshtml" />
+    <Content Include="Views\ContractLand\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

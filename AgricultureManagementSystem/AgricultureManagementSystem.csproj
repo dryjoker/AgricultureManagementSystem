@@ -2058,6 +2058,8 @@
     <Content Include="Views\PaddyStatistic\QueryPaddyStatistic.cshtml" />
     <Content Include="Views\PaddySell\QueryPaddySellData.cshtml" />
     <Content Include="Views\ContractLand\Add.cshtml" />
+    <Content Include="Views\Register\ConfirmEmail.cshtml" />
+    <Content Include="Views\Register\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -53,8 +53,9 @@ namespace AgricultureManagementSystem.Controllers
                 if (result.Succeeded)
                 {
                     string verify_code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //string verify_code_encode = HttpUtility.UrlEncode(verify_code);
                     var verify_EmailUrl = Url.Action("ConfirmEmail", "Register", new { userId = user.Id, code = verify_code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "新註冊用戶信箱開通", "請點擊如下連結 < a href =\"" + verify_EmailUrl + "\">Here</a>來確認你的帳戶");
+                    await UserManager.SendEmailAsync(user.Id, "新註冊用戶信箱開通", "請點擊如下連結 <a href =\"" + verify_EmailUrl + "\">Here</a>來確認你的帳戶");
                     return RedirectToAction("Index", "Login");
                 }
                 AddErrors(result);
@@ -63,6 +64,22 @@ namespace AgricultureManagementSystem.Controllers
             //return RedirectToAction("Index", "Register", addUserViewModel);
             return View(addUserViewModel);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(code))
+            {
+                return View("Error");
+            }
+
+            var result = await UserManager.ConfirmEmailAsync(userId, code);
+            
+            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+
 
         private void AddErrors(IdentityResult identityResult)
         {

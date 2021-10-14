@@ -1857,6 +1857,7 @@
     <Compile Include="Public\Common.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

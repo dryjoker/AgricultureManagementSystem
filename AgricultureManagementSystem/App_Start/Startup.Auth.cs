@@ -16,6 +16,7 @@ namespace AgricultureManagementSystem.IdentityAuth
         {
             app.CreatePerOwinContext(IdentityDbContext.Create);
             app.CreatePerOwinContext<UserManager>(UserManager.Create);
+            app.CreatePerOwinContext<SignInManager>(SignInManager.Create);
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,

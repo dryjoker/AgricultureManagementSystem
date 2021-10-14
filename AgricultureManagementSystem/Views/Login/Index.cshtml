@@ -3,6 +3,8 @@
     Layout = null;
 }
 
+@model AgricultureManagementSystem.ViewModels.LoginViewModel
+
 <!DOCTYPE html>
 
 <html>
@@ -45,37 +47,31 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">稻穀收購系統</h1>
                                     </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                   id="exampleInputEmail" aria-describedby="emailHelp"
-                                                   placeholder="請輸入帳號或信箱">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                   id="exampleInputPassword" placeholder="請輸入密碼">
-                                        </div>
-                                        @*<div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">
-                                                    Remember
-                                                    Me
-                                                </label>
-                                            </div>
-                                        </div>*@
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                    @using (Html.BeginForm("Index", "Login", new { retUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "user", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
                                         <hr>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="/Password/Index">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="/Register/Add">Create an Account!</a>
-                                    </div>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-user", placeholder = "請輸入帳號或信箱" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control form-control-user", @type = "password", placeholder = "請輸入密碼" })
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                @Html.LabelFor(m => m.RememberMe)
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
+                                        <hr>
+                                        <div class="text-center">
+                                            <a class="small" href="/Password/Index">Forgot Password?</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" href="/Register/Add">Create an Account!</a>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>

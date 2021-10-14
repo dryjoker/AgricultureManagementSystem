@@ -45,7 +45,10 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="text-danger">驗證錯誤</h1>
-                                        <h2 class="text-danger">@Model.Exception.Message</h2>
+                                        @if (Model != null)
+                                        {
+                                            <h2 class="text-danger">@Model.Exception.Message</h2>
+                                        }
                                     </div>
                                 </div>
                             </div>

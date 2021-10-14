@@ -67,7 +67,6 @@ namespace AgricultureManagementSystem.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(code))
@@ -75,8 +74,14 @@ namespace AgricultureManagementSystem.Controllers
                 return View("Error");
             }
 
+            var _user = await UserManager.FindByIdAsync(userId);
+            if (_user == null)
+            {
+                return View("Error");
+            }
+            _user.IsFirstTimeRequest = false;
+            await UserManager.UpdateAsync(_user);
             var result = await UserManager.ConfirmEmailAsync(userId, code);
-            
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 

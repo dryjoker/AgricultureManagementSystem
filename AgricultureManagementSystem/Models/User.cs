@@ -14,6 +14,13 @@ namespace AgricultureManagementSystem.Models
         public virtual string Account { get; set; }
         public virtual string Region { get; set; }
 
+        public virtual bool IsFirstTimeRequest { get; set; }
+
+        public User()
+        {
+            this.IsFirstTimeRequest = true;
+        }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

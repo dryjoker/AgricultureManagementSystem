@@ -25,13 +25,21 @@ namespace AgricultureManagementSystem
         public override async Task<IdentityResult> ValidateAsync(User user)
         {
             IdentityResult result = await base.ValidateAsync(user);
-            int cntAccount = _userManager.Users.Where(n => n.Account == user.Account).Count();
-            if (cntAccount > 0)
+
+            var _user = _userManager.Users.Where(n => n.Email == user.Email).ToList();
+            if (_user.Count > 0 && _user.Count == 1)
             {
-                var errors = result.Errors.ToList();
-                //errors.Add("This Account Name already exists");
-                result = new IdentityResult(errors);
-            }
+                if (_user.FirstOrDefault().IsFirstTimeRequest)
+                {
+                    int cntAccount = _userManager.Users.Where(n => n.Account == user.Account).Count();
+                    if (cntAccount > 0)
+                    {
+                        var errors = result.Errors.ToList();
+                        //errors.Add("This Account Name already exists");
+                        result = new IdentityResult(errors);
+                    }
+                }                
+            }            
             return result;
         }
 

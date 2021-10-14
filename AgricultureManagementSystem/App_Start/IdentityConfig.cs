@@ -54,7 +54,9 @@ namespace AgricultureManagementSystem
         //https://developers.google.com/gmail/imap/imap-smtp
         public Task SendAsync(IdentityMessage message)
         {
-            Common.SendMail("smtp.gmail.com", 587, ConfigurationManager.AppSettings["MailPwd"], ConfigurationManager.AppSettings["MailFrom"], message.Destination, message.Subject, message.Body);
+            //smtp-mail.outlook.com 
+            Common.SendMail(ConfigurationManager.AppSettings["SMTP_SERVER"], int.Parse(ConfigurationManager.AppSettings["SMTP_PORT"]), ConfigurationManager.AppSettings["MailPwd"], ConfigurationManager.AppSettings["MailFrom"], message.Destination, message.Subject, message.Body);
+            //Common.SendMail("smtp.gmail.com", 587, ConfigurationManager.AppSettings["MailPwd"], ConfigurationManager.AppSettings["MailFrom"], message.Destination, message.Subject, message.Body);
             return Task.FromResult(0);
         }
     }

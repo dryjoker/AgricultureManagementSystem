@@ -1,4 +1,5 @@
-﻿using AgricultureManagementSystem.ViewModels;
+﻿using AgricultureManagementSystem.Models;
+using AgricultureManagementSystem.ViewModels;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,20 @@ namespace AgricultureManagementSystem.Controllers
 {
     public class LoginController : Controller
     {
+        private UserManager _userManager;
+        public UserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<UserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
+
         private SignInManager _signInManager;
         public SignInManager SignInManager
         {
@@ -33,6 +48,9 @@ namespace AgricultureManagementSystem.Controllers
             return View();
         }
 
+        //await SignInManager.PasswordSignInAsync() always results in a failure in my ASP.NET MVC project
+        //https://stackoverflow.com/questions/31734994/await-signinmanager-passwordsigninasync-always-results-in-a-failure-in-my-asp
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -43,8 +61,17 @@ namespace AgricultureManagementSystem.Controllers
                 return View(loginViewModel);
             }
 
-            var result = await SignInManager.PasswordSignInAsync(loginViewModel.Email, 
+
+            //只適用UserName等於Email情況
+            //var result = await SignInManager.PasswordSignInAsync(loginViewModel.Email, 
+            //    loginViewModel.Password, loginViewModel.RememberMe, shouldLockout: false);
+
+            //username != email
+            User signedUser = await UserManager.FindByEmailAsync(loginViewModel.Email);
+
+            var result = await SignInManager.PasswordSignInAsync(signedUser.UserName,
                 loginViewModel.Password, loginViewModel.RememberMe, shouldLockout: false);
+
 
             switch (result)
             {
@@ -66,7 +93,7 @@ namespace AgricultureManagementSystem.Controllers
             if (Url.IsLocalUrl(retUrl))
                 return Redirect(retUrl);
 
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
 
 

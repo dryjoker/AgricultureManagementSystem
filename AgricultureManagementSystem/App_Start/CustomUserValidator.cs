@@ -26,20 +26,16 @@ namespace AgricultureManagementSystem
         {
             IdentityResult result = await base.ValidateAsync(user);
 
-            var _user = _userManager.Users.Where(n => n.Email == user.Email).ToList();
-            if (_user.Count > 0 && _user.Count == 1)
+            if (user.IsFirstTimeRequest)
             {
-                if (_user.FirstOrDefault().IsFirstTimeRequest)
+                int cntAccount = _userManager.Users.Where(n => n.Account == user.Account).Count();
+                if (cntAccount > 0)
                 {
-                    int cntAccount = _userManager.Users.Where(n => n.Account == user.Account).Count();
-                    if (cntAccount > 0)
-                    {
-                        var errors = result.Errors.ToList();
-                        //errors.Add("This Account Name already exists");
-                        result = new IdentityResult(errors);
-                    }
-                }                
-            }            
+                    var errors = result.Errors.ToList();
+                    //errors.Add("This Account Name already exists");
+                    result = new IdentityResult(errors);
+                }
+            }                     
             return result;
         }
 

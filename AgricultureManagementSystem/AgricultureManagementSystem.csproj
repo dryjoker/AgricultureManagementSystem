@@ -1846,6 +1846,7 @@
     <Compile Include="Controllers\PaddySellController.cs" />
     <Compile Include="Controllers\PaddyStatisticController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RicePriceController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1864,6 +1865,7 @@
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -2067,6 +2069,9 @@
     <Content Include="Views\ContractLand\Add.cshtml" />
     <Content Include="Views\Register\ConfirmEmail.cshtml" />
     <Content Include="Views\Register\Error.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

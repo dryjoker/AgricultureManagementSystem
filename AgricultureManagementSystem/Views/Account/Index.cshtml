@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model IEnumerable<AgricultureManagementSystem.Models.User>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -21,22 +22,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jason</td>
-                        <td>jason486@gmail.com</td>
-                        <td>萬和</td>
-                        <td>
-                            @Html.ActionLink("編輯", "Edit")
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jenny</td>
-                        <td>jenny5566@gmail.com</td>
-                        <td>二林</td>
-                        <td>
-                            @Html.ActionLink("編輯", "Edit")
-                        </td>
-                    </tr>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(item=> user.UserName)</td>
+                            <td>@Html.DisplayFor(item => user.Email)</td>
+                            <td>@Html.DisplayFor(item => user.Region)</td>
+                            <td>
+                                @Html.ActionLink("編輯", "Edit", new { id = user.Id })
+                                @Html.ActionLink("刪除", "Delete", new { id = user.Id })
+                            </td>
+                        </tr>
+                    }
+
+
+                    @*<tr>
+                            <td>Jason</td>
+                            <td>jason486@gmail.com</td>
+                            <td>萬和</td>
+                            <td>
+                                @Html.ActionLink("編輯", "Edit")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jenny</td>
+                            <td>jenny5566@gmail.com</td>
+                            <td>二林</td>
+                            <td>
+                                @Html.ActionLink("編輯", "Edit")
+                            </td>
+                        </tr>*@
                 </tbody>
             </table>
         </div>

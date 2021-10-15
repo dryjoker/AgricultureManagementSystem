@@ -1851,6 +1851,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110150604479_migra_test.cs" />
+    <Compile Include="Migrations\202110150604479_migra_test.designer.cs">
+      <DependentUpon>202110150604479_migra_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityDbContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2072,6 +2077,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\202110150604479_migra_test.resx">
+      <DependentUpon>202110150604479_migra_test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\WeightNoteReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
